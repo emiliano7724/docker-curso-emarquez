@@ -22,7 +22,7 @@ public class MiEndpointService implements MiEndpointServiceI {
 
         if (PARAMETRO_ESPERADO.equals(abc)) {
             status = "OK";
-            message = "Parámetro procesado correctamente";
+            message = "Parámetro procesado correctamente, retorno: XYZ";
             miEntidadRepository.save(RegistroLLamada.builder().parametroRecibido(recibido).build());
             return MiEndpointResponse.builder()
                     .recibido(recibido)
@@ -37,16 +37,11 @@ public class MiEndpointService implements MiEndpointServiceI {
     }
 
     private MiEndpointResponse procesarOtroParametro(String parametro) {
-        String status = "OK";
+        String status;
         String message;
 
         switch (parametro) {
-            case "456":
-                message = "Resultado para 456";
-                break;
-            case "789":
-                message = "Resultado para 789";
-                break;
+
             default:
                 status = "ERROR";
                 message = "Parámetro desconocido";
