@@ -1,6 +1,9 @@
 # Proyecto Docker Curso
 
 Este repositorio contiene el código fuente y la configuración necesaria para ejecutar una aplicación desarrollada como parte de un curso. La aplicación ha sido construida utilizando **Java 21** junto con el framework **Spring Boot** y **PostgreSQL** como base de datos.
+Correr la primera vez  docker compose up --build
+Esto levantara los dos containers incluyendo bd y ddl de la tabla.
+La endpoint es muy sencillo y sigue lo requerido por la consigna.
 
 ## Tecnologías Utilizadas
 EL stack tecnologico es el elegido porque es el que utilizo en mi trabajo actual. Incluso la idea del multistages para mejorar la velocidad lo aprendi en mi trabajo.
@@ -12,7 +15,7 @@ La diferencia es que no se usa compose. Solo se dockeriza la app.
 ## Entorno de Desarrollo
 
 Todo el proyecto se desarrolló y ejecutó en un entorno Windows utilizando Docker instalado directamente en WSL (Windows Subsystem for Linux), sin la necesidad de Docker Desktop. Para la gestión y ejecución de los contenedores, se utilizó el comando `docker compose` dentro de WSL.
-
+El IDE utilizado es Intellij IDEA.
 ## Endpoints
 
 La aplicación expone publicamente el siguiente endpoint:
@@ -28,7 +31,7 @@ La aplicación expone publicamente el siguiente endpoint:
           {
               "recibido": "123",
               "status": "OK",
-              "message": "Parámetro procesado correctamente"
+              "message": "Parámetro procesado correctamente, retorno: XYZ"
           }
           ```
           Además, este valor se grabará en la base de datos junto con la fecha y hora actuales.
@@ -36,8 +39,8 @@ La aplicación expone publicamente el siguiente endpoint:
           ```json
           {
               "recibido": "456",
-              "status": "OK",
-              "message": "Resultado para 456"
+              "status": "ERROR",
+              "message": "Parámetro desconocido"
           }
           ```
 
