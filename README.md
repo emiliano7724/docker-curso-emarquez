@@ -99,5 +99,5 @@ Este Dockerfile sigue una estrategia de múltiples etapas para crear una imagen 
 Este archivo Compose facilita la gestión de los servicios de la aplicación, permitiendo levantar tanto la aplicación como la base de datos con un solo comando, mientras asegura que ambos puedan comunicarse a través de una red interna.
 
 ## Dificultad Encontrada
-Se me hizo costoso la comunicacion con la base de datos ya que el container db no podia levantarlo. Ni siquiera de manera individual. Luego de renegar un buen rato pude saber que era porque en mi local ya tenia un postgre corriendo y encima en el mismo puerto 5433.
+Se me hizo costoso la comunicacion con la base de datos ya que el container db no podia levantarlo. Ni siquiera de manera individual. Luego de renegar un buen rato pude saber que era porque en mi local ya tenia un postgre corriendo y encima en el mismo puerto 5432 por defecto.
 Por lo que al darme cuenta lo mapie a 5433 y ya no tuve problema.
